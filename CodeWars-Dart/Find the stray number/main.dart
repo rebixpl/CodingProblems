@@ -13,4 +13,12 @@ main(List<String> args) {
   int stray(numbers) => numbers.fold(0, (a, b) => a ^ b);
 
   print(stray([17, 17, 3, 17, 17, 17, 17]));
+
+  // SOLUTION 2
+  int stray2(List<int> numbers) {
+    numbers.sort();
+    return numbers[0] == numbers[1] ? numbers.last : numbers.first;
+  }
+
+  print(stray2([17, 17, 3, 17, 17, 17, 17]));
 }
